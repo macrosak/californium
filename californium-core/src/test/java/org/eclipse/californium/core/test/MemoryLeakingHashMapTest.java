@@ -55,6 +55,7 @@ import org.eclipse.californium.core.network.CoapEndpoint;
 import org.eclipse.californium.core.network.config.NetworkConfig;
 import org.eclipse.californium.core.network.interceptors.MessageTracer;
 import org.eclipse.californium.core.server.resources.CoapExchange;
+import org.eclipse.californium.elements.runner.RepeatingTestRunner;
 import org.eclipse.californium.rule.CoapNetworkRule;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -62,8 +63,10 @@ import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.junit.runner.RunWith;
 
 // Category Large because CoapServer runs into timeout (after 5 secs) on shutdown
+@RunWith(RepeatingTestRunner.class)
 @Category(Large.class)
 public class MemoryLeakingHashMapTest {
 	@ClassRule
